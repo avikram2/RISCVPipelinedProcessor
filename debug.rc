@@ -1,0 +1,76 @@
+Magic 271485
+Revision Verdi_R-2020.12-SP1-1
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 25 1690 710 469 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/lclee3/mp4/mp4/sim/dump.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 686275880.691566 713306532.595181
+cursor 711955000.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 0
+; marker line index
+markerPos 21
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/lclee3/mp4/mp4/sim/dump.fsdb"
+addSignal -h 15 -UNSIGNED -HEX /mp4_tb/dut/cpu/debug_ID_PC[31:0]
+addSignal -h 15 -holdScope debug_ID_IR[31:0]
+addSignal -h 15 -holdScope debug_EX_PC[31:0]
+addSignal -h 15 -holdScope debug_EX_IR[31:0]
+addSignal -h 15 -holdScope debug_MEM_PC[31:0]
+addSignal -h 15 -holdScope debug_MEM_IR[31:0]
+addSignal -h 15 -holdScope debug_WB_PC[31:0]
+addSignal -h 15 -holdScope debug_WB_IR[31:0]
+addSignal -h 15 -holdScope debug_WB_target_address[31:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope num_control_flow_instr[31:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope num_br_instr[31:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope num_ctrl_instr_wo_stall[31:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope num_correct_branch_predict[31:0]
+addSignal -h 15 -UNSIGNED -UDEC /mp4_tb/dut/cache_sys/num_l2_request[31:0]
+addSignal -h 15 -UNSIGNED -UDEC /mp4_tb/dut/cache_sys/l2_cache/control/num_l2_miss[31:0]
+addSignal -h 15 /mp4_tb/dut/cpu/num_control_flow_instr_overflow
+addSignal -h 15 -holdScope num_br_instr_overflow
+addSignal -h 15 -holdScope num_ctrl_instr_wo_stall_overflow
+addSignal -h 15 -holdScope num_correct_branch_predict_overflow
+addSignal -h 15 /mp4_tb/dut/cache_sys/num_l2_request_overflow
+addSignal -h 15 /mp4_tb/dut/cache_sys/l2_cache/control/num_l2_miss_overflow
+addSignal -h 15 /mp4_tb/dut/cpu/debug_halt
+addGroup "G2"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+
